@@ -1,0 +1,67 @@
+mat-toolbar {
+    background:  rgb(36, 126, 201) !important;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+mat-toolbar div.nav-bar {
+    font-size: 24px;
+}
+
+form.form-appearance {
+    justify-content: center;
+    align-content: center;
+    display: grid;
+}
+form div.input-group {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+mat-form-field {
+    width: 300px;
+}
+form div.button-group {
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-end;
+}
+form div.button-group button[type="submit"]:enabled {
+    background: #30d160;
+    color: white;
+}
+form div.button-group button[type="reset"] {
+    background: #5bc0de;
+    color: white;
+}
+button.delete-button {
+    background: #db2626;
+    color: white
+}
+button.edit-button {
+    background: #ffcc00;
+    color: white
+}
+button:hover {
+    opacity: 0.95;
+}
+th,td{
+    text-align: center;
+}
+th{
+    background-color: rgb(36, 126, 201);
+    color: white;
+    padding: 5px;
+}
+
+.tbl1
+{
+    width: 400px;
+}
+.tbl2
+{
+    width: 400pxx;
+}
+.tbl3 {
+    width: 800px;
+}
