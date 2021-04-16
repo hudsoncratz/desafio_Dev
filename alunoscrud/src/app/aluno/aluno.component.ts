@@ -35,7 +35,6 @@ export class AlunoComponent implements OnInit {
     }
     else {
       this.allAlunos = this.allAlunos.pipe( map( array => array.filter(res => {
-        console.log(this.nome);
         return res.nome.toLocaleLowerCase().match(this.nome.toLocaleLowerCase())
       })
       ))
