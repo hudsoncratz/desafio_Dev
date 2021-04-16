@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';  
+import { FormBuilder, FormControl, Validators } from '@angular/forms';  
 import { Observable } from 'rxjs';  
 import { AlunoService } from '../aluno.service';  
 import { Aluno } from '../aluno';  
-
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-aluno',
@@ -15,16 +15,31 @@ export class AlunoComponent implements OnInit {
   
   dataSaved = false;  
   alunoForm: any;  
-  allAlunos!: Observable<Aluno[]>;  
+  allAlunos!: Observable<Aluno[]>;
+  nome: string = '';  
+  filter: any;
   alunoIdUpdate = '';  
   message = '';  
   constructor(private formbulider: FormBuilder, private alunoService:AlunoService) { }
   ngOnInit() {
     this.alunoForm = this.formbulider.group({  
       Nome: ['', [Validators.required]],  
-      Email: ['', [Validators.required]],  
+      Email: ['', [Validators.required]],
+      SearchNome: '', 
     });  
     this.loadAllAlunos();  
+  }
+  Search() {
+    if(this.nome == "") {
+      this.ngOnInit();
+    }
+    else {
+      this.allAlunos = this.allAlunos.pipe( map( array => array.filter(res => {
+        console.log(this.nome);
+        return res.nome.toLocaleLowerCase().match(this.nome.toLocaleLowerCase())
+      })
+      ))
+    }
   }
   loadAllAlunos() {  
     this.allAlunos = this.alunoService.getAllAlunos();  

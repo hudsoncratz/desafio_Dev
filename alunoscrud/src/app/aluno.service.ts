@@ -13,7 +13,7 @@ export class AlunoService {
   url = 'https://localhost:44354/api/alunos';  
   constructor(private http: HttpClient) { }
   
-  getAllAlunos(): Observable<Aluno[]> {  
+  getAllAlunos() {  
     return this.http.get<Aluno[]>(this.url);  
   }  
   getAlunoById(alunoid: string): Observable<Aluno> {  

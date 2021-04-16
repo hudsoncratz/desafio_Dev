@@ -24,12 +24,15 @@ import { MatTableModule } from '@angular/material/table';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  
 
+import { Ng2SearchPipeModule } from "ng2-search-filter";
+
 @NgModule({
   declarations: [
     AppComponent,
     AlunoComponent
   ],
   imports: [
+    Ng2SearchPipeModule,
     MatTableModule,
     BrowserModule,  
     FormsModule,  

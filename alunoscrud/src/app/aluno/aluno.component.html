@@ -30,8 +30,12 @@
               <button type="reset" mat-raised-button matTooltip="Clique no botão Resetar" (click)="resetForm()">Resetar</button> 
             </div>
           </div> 
-           <br><br> 
-          <table class="table" > 
+           <br><br>
+           <mat-form-field class="demo-full-width search-field" appearance="outline" color="primary">
+            <mat-label>Procure o nome</mat-label>
+            <input matInput formControlName="SearchNome" placeholder="Pesquise o nome" name="nome" [(ngModel)]="nome" (ngModelChange)="Search()">
+          </mat-form-field>
+          <table class="table" >
               <tr ngclass="btn-primary"> 
                 <th class="tbl2">Nome do Aluno</th> 
                 <th class="tbl2">Email</th> 
